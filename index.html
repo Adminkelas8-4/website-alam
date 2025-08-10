@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alam Kita — Jelajahi & Lindungi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<script>
+// Scroll animation
+const reveals = document.querySelectorAll('.reveal');
+function revealOnScroll() {
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 50) {
+      el.classList.add('active');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">
+        <div class="logo">AK</div>
+        Alam Kita
+      </a>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <nav>
+        <ul id="primary-menu">
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#articles">Artikel</a></li>
+          <li><a href="#contact">Kontak</a></li>
+          <li><a class="cta" href="#contact">Bergabung</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <span class="eyebrow">Jaga Bumi</span>
+        <h1>Menjelajahi keindahan alam — untuk dilihat, dipelajari, dan dilindungi</h1>
+        <p class="muted">Sebuah ruang untuk galeri foto, artikel edukasi, serta aksi pelestarian.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#gallery">Lihat Galeri</a>
+          <a class="secondary" href="#articles">Baca Artikel</a>
+        </div>
+      </div>
+      <div class="card-hero">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Pemandangan alam">
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div>
+        <h2>Tentang Alam Kita</h2>
+        <p class="muted">Alam Kita bertujuan meningkatkan kesadaran tentang ekosistem.</p>
+      </div>
+      <aside class="card">
+        <h3>Visi & Misi</h3>
+        <p>Mendorong keterlibatan publik dalam pelestarian alam.</p>
+      </aside>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <h2>Galeri Foto</h2>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=60&w=800" alt="">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=60&w=800" alt="">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=60&w=800" alt="">
+      </div>
+    </section>
+
+    <!-- ARTICLES -->
+    <section id="articles">
+      <h2>Artikel Edukasi</h2>
+      <div class="articles">
+        <article class="article">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=60&w=1200" alt="">
+          <h3>Cara Menanam Pohon</h3>
+        </article>
+        <article class="article">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=60&w=1200" alt="">
+          <h3>Menjaga Sumber Air</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Kontak</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Nama" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Pesan..." required></textarea>
+        <button type="submit" class="cta">Kirim</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>© 2025 Alam Kita</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('primary-menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
+
+</body>
+  </html>
+  
