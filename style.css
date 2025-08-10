@@ -1,0 +1,235 @@
+:root {
+  --bg: #f6fbf9;
+  --card: #ffffff;
+  --accent-green: #2e8b57;
+  --accent-dark: #1f4d3a;
+  --muted: #6b7280;
+  --shadow: 0 6px 18px rgba(16,24,40,0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--accent-dark);
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* NAVBAR */
+.nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+}
+.logo {
+  background: var(--accent-green);
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+}
+nav a {
+  text-decoration: none;
+  color: var(--accent-dark);
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: var(--accent-green);
+}
+.cta {
+  background: var(--accent-green);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.cta:hover {
+  background: #256c45;
+  transform: scale(1.05);
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--card);
+    padding: 12px;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 20px;
+  padding: 40px 0;
+}
+.hero-left h1 {
+  font-size: 32px;
+}
+.muted {
+  color: var(--muted);
+}
+.card-hero img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.4s ease;
+}
+.card-hero img:hover {
+  transform: scale(1.03);
+}
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ABOUT */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  padding: 40px 0;
+}
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ARTICLES */
+.articles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.article {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+.article img {
+  width: 100%;
+  border-radius: 8px;
+}
+.article:hover {
+  transform: translateY(-5px);
+}
+@media (max-width: 768px) {
+  .articles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CONTACT */
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-green);
+  outline: none;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ANIMATION - Fade In */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  
